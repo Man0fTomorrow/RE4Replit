@@ -16,6 +16,7 @@ import {
   PageFour,
   PageFive,
   LoginPage,
+  LogoutPage,
   PageThree,
 } from './elements';
 
@@ -62,7 +63,11 @@ export default function Router() {
     },
     {
       element: <CompactLayout />,
-      children: [{ path: '404', element: <Page404 /> }],
+      children: [{ path: '404', element: <Page404 /> },
+      { path: '409', element: <LogoutPage /> },
+      { path: 'logout', element: <LogoutPage /> },
+    ],
+      
     },
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
